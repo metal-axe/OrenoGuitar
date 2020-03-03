@@ -1,0 +1,19 @@
+<div id="form_container">
+  <div id="form_area">
+    <div>
+      <h1>Log in</h1>
+    </div>
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+      <div>
+        <%= f.email_field :email, placeholder: 'e-mail', class: 'form_style' %>
+      </div>
+
+      <div>
+        <%= f.password_field :password, placeholder: 'password', class: 'form_style' %>
+      </div>
+
+      <%= f.submit 'LOG IN', class: 'btn_style' %>
+    <% end %>
+    <p>Don't have an account yet? <%= link_to 'Sign up', signup_path %></p>
+  </div>
+</div>
