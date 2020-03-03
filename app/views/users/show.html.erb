@@ -8,16 +8,18 @@
         <p><%= @user.name %></p>
       </div>
       <div class="user_url">
-        <p><%= @user.url %></p>
+        <p><%= link_to @user.url, @user.url, class:"no-underline"%></p>
       </div>      
       <div class="user_profile">
         <p><%= @user.profile %></p>
       </div>
     </div>
     <div class="edit_area">
+      <%= link_to(edit_user_path)  do %>
       <div class="edit_button">
         編集ボタンが入る
       </div>
+      <% end %>
     </div>
     <div class="button_space">
       <p>ファボとか</p>

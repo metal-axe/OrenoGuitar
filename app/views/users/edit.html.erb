@@ -1,2 +1,34 @@
 <h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+
+<div class="outer_container">
+  <div class="user_container">
+    <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="userp">
+      <img src="#" class="user_image">
+    </div>
+    <div class="user_prof">
+      <div class="user_name">
+        <%= f.label :name, 'Name' %>
+        <%= f.text_field :name, class: 'form_style' %>
+      </div>
+      <div class="user_url">
+        <%= f.label :url, 'Url' %>
+        <%= f.text_field :url, class: 'form_style' %>
+      </div>
+      <div class="user_profile">
+        <%= f.label :profile, 'profile' %>
+        <%= f.text_area :profile, class: 'form_style' %>
+      </div>
+      <%= f.submit 'submit', class: 'btn_style' %>
+    <% end %>
+    </div>
+    <div class="edit_area">
+    </div>
+    <div class="button_space">
+      <p>ファボとか</p>
+    </div>
+
+  </div>
+</div>
