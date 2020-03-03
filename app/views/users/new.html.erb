@@ -1,0 +1,28 @@
+<div id="form_container">
+  <div id="form_area">
+    <div>
+      <h1>Sign up</h1>
+    </div>
+      <p>All fields are required.</p>
+    <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+      <div class="form_group">
+        <%= f.text_field :name, placeholder: 'name', class: 'form_style' %>
+      </div>
+
+      <div>
+        <%= f.email_field :email, placeholder: 'e-mail', class: 'form_style' %>
+      </div>
+
+      <div>
+        <%= f.password_field :password, placeholder: 'password', class: 'form_style' %>
+      </div>
+
+      <div>
+        <%= f.password_field :password_confirmation,placeholder: 'Confirm Password', class: 'form_style' %>
+      </div>
+
+      <%= f.submit 'SIGN UP', class: 'btn_style' %>
+    <% end %>
+  </div>
+</div>

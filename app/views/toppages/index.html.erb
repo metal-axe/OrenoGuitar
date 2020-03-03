@@ -60,7 +60,9 @@
     <p>Create an account?</p>
   </div>
   <div id="loginarea" class="area">
-    <div id="signup_button"><p>Sign up</p></div>
+    <%= link_to(signup_path, class:"no-underline")  do %>
+      <div id="signup_button"><p>Sign up</p></div>
+    <% end %>
     <div id="login_button"><p>Log in</p></div>
   </div>
   <div id="update_area" class="area">
