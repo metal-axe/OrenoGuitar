@@ -1,0 +1,367 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1rem;
+    background-color: #000;
+    overflow-wrap:break-word;
+}
+
+ul{
+    list-style: none;
+}
+
+h2{
+    font-size: 1.2rem;
+    color: #9aa;
+    border-bottom: solid 1px #333;
+    margin: 0 0 15px;
+}
+
+header{
+    width: 70vw;
+    margin: 0 auto;
+    background-color: rgba(100, 100, 100, 0.8);
+    border-right: solid 1px #333;
+    border-left: solid 1px #333;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    background-color: #fff;
+}
+
+#header_band{
+    display: block;
+    width: 100%;
+    height: 18px;
+    position: relative;
+    top: 0;
+    text-align: center;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+#header_band p{
+    font-size: 1rem;
+    line-height: 18px;
+}
+
+#menubar{
+    display: block;
+    width: 100%;
+    position: relative;
+    bottom: 0px;
+    left: 0;
+    background-color: rgba(100, 100, 100, 0);
+}
+header li{
+    display: inline-block;
+    width: 10%;
+    height: 24px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 24px;
+}
+header li:last-child{
+    width: 50%;
+}
+header li:hover{
+    color: #f00;
+}
+
+/************************ メインコンテナ ************************/
+
+#container{
+  overflow: auto;
+  scroll-snap-type: both;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 180px 1fr 180px;
+  grid-template-rows: 50px 200px auto auto 30px;
+  width: 70vw;
+  height: 95vh;
+  margin: 0 auto;
+  border: solid 1px #333;
+  background-color: #333;
+}
+#container p{
+    color: #222;
+}
+.rowspan5{
+    grid-row: span 5;
+}
+.rowspan2{
+    grid-row: span 2;
+}
+
+.area {
+  scroll-snap-align: start;
+  background-color: #055;
+  padding: 10px 15px;
+}
+/************************ ユーザーコンテナ ************************/
+
+.user_container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 180px 1fr 20px;
+    grid-template-rows: 180px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: solid 1px #a22;
+    background-color: #aa7;
+}
+.user_container .userp{
+}
+.user_container .user_name{
+    font-size: 2rem;
+}
+.user_container .user_url{
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.user_container .user_profile{
+    font-size: 1.2rem;
+}
+.user_container .edit_area{
+}
+.user_container .edit_button{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+/************************ マイギターコンテナ ************************/
+.flex_container{
+    display: flex;
+   flex-flow: wrap;
+}
+
+.myguitar_container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px 1fr 20px;
+    grid-template-rows: auto;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: solid 1px #a22;
+    background-color: #aa7;
+}
+.myguitar_container .spec{
+    font-size: 1.2rem;
+}
+/************************ センターコンテナ ************************/
+
+#center_area{
+    overflow: auto;
+}
+.outer_container{
+    display: block;
+    margin-bottom: 20px;
+    background-color: #aaa;
+}
+
+.inner_container{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 60px 1fr 150px;
+    grid-template-rows: 60px auto 20px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: solid 1px #a22;
+    background-color: #aa7;
+}
+
+.inner_container .userp{
+}
+.inner_container .user_prof{
+    font-size: 1.5rem;
+}
+.inner_container .spec{
+    grid-column: span 2;
+    font-size: 1.2rem;
+}
+.inner_container .productp{
+    grid-row: span 3;
+    overflow: hidden;
+}
+.inner_container .button_space{
+    grid-column: span 2;
+}
+.user_image{
+    width: 100%;
+}
+.product_image{
+    width: 100%;
+}
+
+/************************ ログインボタン ************************/
+
+#signup_button, #login_button{
+    display: block;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border: solid 1px #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px auto;
+}
+#signup_button{
+    background-color: #0aa;
+}
+#signup_button:hover{
+    background-color: #0cc;
+}
+#login_button{
+    background-color: #000;
+}
+#login_button:hover{
+    border: solid 1px #999;
+}
+#signup_button p, #login_button p{
+    line-height: 30px;
+}
+#signup_button p{
+    color: #344;
+}
+#login_button p{
+    color: #9aa;
+}
+
+/************************ 編集ボタン ************************/
+
+.edit_button{
+    display: block;
+    width: 20px;
+    height: 20px;
+    /**背景はあとでSVGに差し替える**/
+    background-color: #222;
+    text-indent: -99999px;
+    z-index: 9999px;
+}
+
+/************************ コピーライト ************************/
+
+#copyright{
+    text-align: center;
+    vertical-align: bottom;
+}
+
+/************************ フッター ************************/
+
+footer{
+    width: 70vw;
+    height: 10px;
+    background-color: #344;
+    margin: 0 auto 10px;
+}
+
+@media (max-width: 1000px){
+/*** ユーザー ***/
+.user_container{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 20px;
+    grid-template-rows: 100px auto;
+}
+.user_container .userp{
+    order: 1;
+    width: 100px;
+}
+.user_container .user_prof{
+    order: 3;
+}
+.user_container .edit_area{
+    order: 2;
+}
+
+/*** マイギター ***/
+
+.myguitar_container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 20px;
+    grid-template-rows: auto auto;
+}
+.myguitar_container .productp{
+    order: 1;
+    width: 100px;
+}
+.myguitar_container .spec{
+    order: 3;
+}
+.myguitar_container .edit_area{
+    order: 2;
+}
+
+/*** センターフィード ***/
+.inner_container{
+    grid-template-columns: 40px auto 100px;
+    grid-template-rows: 40px auto 20px;
+    height: auto;
+}
+.inner_container .userp{
+    order: 1;
+}
+.inner_container .user_prof{
+    order: 2;
+    grid-column: span 2;
+}
+.inner_container .spec{
+    order: 3;
+    grid-column: span 2;
+    position: relative;
+}
+.inner_container .productp{
+    order: 4;
+    grid-row: span 1;
+}
+.inner_container .button_space{
+    order: 5;
+    grid-column: span 3;
+}
+
+}
+
+
+@media (max-width: 800px){
+  #container{
+  	  grid-template-columns: 1fr;
+  	  grid-template-rows: auto;
+  }
+.rowspan5,
+.rowspan2{
+    grid-row: span 1;
+}
+
+.myguitar_container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px auto 20px;
+    grid-template-rows: auto;
+}
+.myguitar_container .productp{
+    order: 1;
+    width: 100px;
+}
+.myguitar_container .spec{
+    order: 2;
+}
+.myguitar_container .edit_area{
+    order: 3;
+}
+
+}
+
