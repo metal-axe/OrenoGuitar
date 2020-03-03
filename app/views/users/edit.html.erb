@@ -6,8 +6,12 @@
     <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class="userp">
-      <img src="#" class="user_image">
+      <%= render 'layouts/user_icon', user: @user %>
     </div>
+    <button type="button" class="btn btn-outline-secondary rounded-pill">
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+    </button>
+
     <div class="user_prof">
       <div class="user_name">
         <%= f.label :name, 'Name' %>

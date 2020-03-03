@@ -110,6 +110,22 @@ header li:hover{
   background-color: #055;
   padding: 10px 15px;
 }
+/************************ 画像の設定 ************************/
+
+.check{
+  background-color: #f00;
+}
+
+.userp img, .productp img {
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover
+}
+
+
+
 /************************ ユーザーコンテナ ************************/
 
 .user_container{
@@ -125,8 +141,10 @@ header li:hover{
 }
 .user_container .userp{
     grid-row: span 2;
+    width: 180px;
+    height: 180px;
 }
-.user_container .user_name{
+.user_container .user_name p{
     font-size: 2rem;
 }
 .user_container .user_url{
@@ -147,6 +165,8 @@ header li:hover{
     order: 5;
     grid-column: span 2;
 }
+
+/************************ フォームのデザイン ************************/
 
 #form_container{
     width: 100vw;
@@ -244,6 +264,8 @@ header li:hover{
 }
 
 .inner_container .userp{
+  width: 60px;
+  height: 60px;
 }
 .inner_container .user_prof{
     font-size: 1.5rem;
@@ -254,17 +276,11 @@ header li:hover{
 }
 .inner_container .productp{
     grid-row: span 3;
-    overflow: hidden;
 }
 .inner_container .button_space{
     grid-column: span 2;
 }
-.user_image{
-    width: 100%;
-}
-.product_image{
-    width: 100%;
-}
+
 
 /************************ ログインボタン ************************/
 
@@ -300,6 +316,16 @@ header li:hover{
 #login_button p{
     color: #9aa;
 }
+/************************ ログインスペース ************************/
+#loginn_area_upside{
+}
+
+#loginarea .userp{
+  width: 80px;
+  height: 80px;
+}
+
+
 
 /************************ 編集ボタン ************************/
 

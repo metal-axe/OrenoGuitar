@@ -44,7 +44,13 @@
       <%= link_to 'MY PAGE', user_path(current_user), class:"no-underline" %>
     </div>
     <div id="loginarea" class="area">
-      <p>ログイン完了ユーザ: <%= current_user.name %></p>
+      <div class="userp">
+        <%= render 'layouts/user_icon', user: current_user %>
+      </div>
+      <div class="user_prof">
+        <p>ログイン完了ユーザ: <%= current_user.name %></p>
+      </div>
+
       <%= link_to 'Logout', logout_path, method: :delete %>
     </div>
   <% else %>

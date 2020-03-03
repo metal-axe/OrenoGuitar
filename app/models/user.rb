@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :image, UsericonUploader
+
   before_save { self.email.downcase! }
   validates :name, presence: true, length: { maximum: 20 }
   validates :email, presence: true, length: { maximum: 255 },
