@@ -1,0 +1,29 @@
+  <% if logged_in? %>
+    <%= link_to(new_guitar_path, class:"no-underline")  do %>
+    <div id="loginn_area_upside" class="area bg-bl">
+      <p>Add New Sheet</p>
+    </div>
+    <% end %>
+    <div id="loginarea" class="area">
+      <div class="userp">
+        <%= render 'layouts/user_icon', user: current_user %>
+      </div>
+      <div class="user_prof">
+        <h3><%= current_user.name %></h3>
+      </div>
+
+    </div>
+
+  <% else %>
+    <div id="loginn_area_upside" class="area bg-gr">
+      <p>Create an account?</p>
+    </div>
+    <div id="loginarea" class="area">
+      <%= link_to(signup_path, class:"no-underline")  do %>
+        <div id="signup_button"><p>Sign up</p></div>
+      <% end %>
+      <%= link_to(login_path, class:"no-underline")  do %>
+        <div id="login_button"><p>Log in</p></div>
+      <% end %>
+    </div>
+  <% end %>

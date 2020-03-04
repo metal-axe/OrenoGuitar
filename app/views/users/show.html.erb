@@ -1,4 +1,15 @@
-<h1>Users#show</h1>
+<%= render 'layouts/header', users: @users %>
+
+<div id="container">
+  <div id="infomation_area" class="area  rowspan2">
+    <h2>information</h2>
+  </div><!-- end of infomation_area-->
+
+  <div id="center_area" class="area rowspan5">
+    <h2>User</h2>
+    <div class="outer_container">
+        <!-- ここから中のコンテナ-->
+
 
 
 <div class="outer_container">
@@ -24,25 +35,46 @@
     <div class="edit_area">
       <%= link_to(edit_user_path)  do %>
       <div class="edit_button">
-        編集ボタンが入る
+        編集
       </div>
       <% end %>
     </div>
-    <div class="button_space">
-      <p>ファボとか</p>
+    <div class="button_areea">
+      
     </div>
   </div>
 </div>
 
-<%= link_to(new_guitar_path, class:"no-underline")  do %>
-<div>
-  ギター登録ボタン
-</div>
-<% end %>
 
-<%= link_to(root_path, class:"no-underline")  do %>
-<div>
-  トップへボタン
-</div>
-<% end %>
-  <%= render 'guitars/guitars', guitars: @guitars %>
+
+<h2>Guitars</h2>
+<%= render 'guitars/guitars', guitars: @guitars %>
+
+
+        <!-- ここまで中のコンテナ-->
+    </div>
+  </div><!-- end of center_area-->
+
+
+  <%= render 'layouts/login' %>
+
+  <div id="update_area" class="area">
+    <h2>Update</h2>
+  </div>
+  <div id="upper_right_area" class="area">
+    <h2>Favo Ranking</h2>
+  </div>
+  <div id="lower_left_area" class="area rowspan2">
+    <p>free space</p>
+  </div>
+  <div id="lower_right_area" class="area">
+    <h2>Model Ranking</h2>
+  </div>
+  <%= link_to(logout_path, class:"no-underline")  do %>
+  <div id="logout" class="area">
+    <p>LOG OUT</p>
+  </div>
+  <% end %>
+</div><!-- end of center-->
+
+<%= render 'layouts/footer' %>

@@ -3,16 +3,37 @@
     <p>Show off and manage your guitar!</p>
   </div>
   <div id="logo">
-     <h1>ORENO GUITAR</h1>
+    <%= link_to(root_path, class:"no-underline")  do %>
+      <h1>ORENO GUITAR</h1>
+    <% end %>
   </div>
-  <div id="menubar">
+
+  <% if logged_in? %>
+  <div id="navbar">
     <nav>
       <ul>
-        <li>Guitars</li>
-          <li>Guitars</li>
-          <li>Guitars</li>
-          <li>serch</li>
+        <li><p>Guitars</p></li>
+
+        <li>
+          <div class="new_post">
+            <%= link_to(user_path(current_user), class:"no-underline")  do %>
+            <p>My Page</p>
+            <% end %>
+          </div>
+        </li>           
       </ul>
     </nav>
   </div>
+
+  <% else %>
+  <div id="navbar">
+    <nav>
+      <ul>
+        <li>Guitars</li>
+
+        <li>serch</li>
+      </ul>
+    </nav>
+  </div>
+  <% end %>
 </header>

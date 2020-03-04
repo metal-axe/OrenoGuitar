@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_151438) do
+ActiveRecord::Schema.define(version: 2020_03_04_050127) do
 
   create_table "guitars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2020_03_03_151438) do
     t.index ["user_id"], name: "index_guitars_on_user_id"
   end
 
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "custom_record"
+    t.string "maintenance_record"
+    t.bigint "guitar_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guitar_id"], name: "index_records_on_guitar_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -58,4 +67,5 @@ ActiveRecord::Schema.define(version: 2020_03_03_151438) do
   end
 
   add_foreign_key "guitars", "users"
+  add_foreign_key "records", "guitars"
 end

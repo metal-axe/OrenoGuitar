@@ -1,0 +1,13 @@
+<h1>カスタムレコード</h1>
+
+<%= form_with(model: @record, local: true) do |f| %>
+
+<%= render 'layouts/error_messages', model: f.object %>
+  <div>
+    <%= f.text_area :custom_record, placeholder: 'tuning', class: 'form_style' %>
+  </div>
+
+  <%= f.submit 'REGISTER', class: 'btn_style' %>
+<% end %>
+
+<%= link_to 'CANCEL', user_path(current_user), class:"no-underline btn_style" %>

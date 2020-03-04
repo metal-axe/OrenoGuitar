@@ -3,8 +3,7 @@ class GuitarsController < ApplicationController
 
   def show
     @guitar = Guitar.find(params[:id])
-    #@user = User.find(params[:id])
-    #@guitar = @user.guitars
+
   end
 
   def new

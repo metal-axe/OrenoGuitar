@@ -6,17 +6,17 @@
     <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
   </div>
 
-  <div>
+  <div class="ceheck_box">
     <%= f.radio_button :category, :guitar, checked: true %>
     <%= f.label :category, "Guitar", {value: :guitar, style: "display: inline-block;"} %>
     <%= f.radio_button :category, :bass %>
     <%= f.label :category, "Bass", {value: :bass, style: "display: inline-block;"} %>
   </div>
   <div>
-    <%= f.text_field :brand, placeholder: 'brand', class: 'form_style' %>
+    <%= f.text_field :brand, placeholder: 'brand*', class: 'form_style' %>
   </div>
     <div>
-    <%= f.text_field :model, placeholder: 'model', class: 'form_style' %>
+    <%= f.text_field :model, placeholder: 'model*', class: 'form_style' %>
   </div>
 
   <div>
@@ -83,11 +83,11 @@
     <%= f.text_field :hardware_color, placeholder: 'hardware_color', class: 'form_style' %>
   </div>
 
-  <div>
+  <div class="text_area">
     <%= f.text_area :others, placeholder: 'others', class: 'form_style' %>
   </div>
 
-  <div>
+  <div class="ceheck_box">
     <%= f.label :main_or_sub, 'Mainly use it?' %>
     <%= f.check_box :main_or_sub ,{}, 'true', 'false' %>
   </div>
@@ -95,4 +95,8 @@
   <%= f.submit 'REGISTER', class: 'btn_style' %>
 <% end %>
 
-<%= link_to 'CANCEL', user_path(current_user), class:"no-underline btn_style" %>
+<%= link_to(:back, class:"no-underline") do %>
+<div id="cancel_button">
+ <p>×</p>
+</div>
+<% end %>

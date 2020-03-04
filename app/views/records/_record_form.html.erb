@@ -1,0 +1,11 @@
+<%= form_with(model: record, local: true) do |f| %>
+
+<%= render 'layouts/error_messages', model: f.object %>
+  <div>
+    <%= f.text_area :custom_record, placeholder: 'custom record', class: 'form_style' %>
+  </div>
+
+  <%= f.submit 'REGISTER', class: 'btn_style' %>
+<% end %>
+
+<%#= link_to 'CANCEL', guitar_path(guitar), class:"no-underline btn_style" %>

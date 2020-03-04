@@ -1,44 +1,68 @@
-<h1>ギター詳細</h1>
+<div id="spec_container">
+
+  <div class="productp">
+    <%= render 'layouts/product_image', guitar: @guitar %>
+  </div>
 
 
-      <div class="spec_container">
-        <div class="productp">
-          <%= render 'layouts/product_image', guitar: @guitar %>
-        </div>
+  <div class="spec">
+    <ul>
+      <li>brand : <%= @guitar.brand %></li>
+      <li>model : <%= @guitar.model %></li>
+      <li>body : <%= @guitar.body_type %> / <%= @guitar.body_wood %></li>
+      <li>neck : <%= @guitar.neck_type %> / <%= @guitar.neck_wood %></li>
+      <li>fret : <%= @guitar.fret %></li>
+      <li>number of fret : <%= @guitar.number_of_fret %></li>
+      <li>finger board : <%= @guitar.fret_wood %></li>
+      <li>scale : <%= @guitar.scale %></li>
+      <li>nut : <%= @guitar.nut %></li>
+      <li>bridge : <%= @guitar.bridge %></li>
+      <li>string space : <%= @guitar.string_space %></li>
+      <li>neck pickup : <%= @guitar.neck_pickup %></li>
+      <li>middle pickup : <%= @guitar.middle_pickup %></li>
+      <li>bridg pickup : <%= @guitar.bridg_pickup %></li>
+      <li>controlls : <%= @guitar.controlls %></li>
+      <li>tuners : <%= @guitar.tuners %></li>
+      <li>hardware_color : <%= @guitar.hardware_color %></li>
+      <li>others : <%= @guitar.others %></li>
+    </ul>
+  </div>
 
-        <div class="spec">
-          <ul>
-            <li>brand : <%= @guitar.brand %></li>
-            <li>model : <%= @guitar.model %></li>
-            <li>body : <%= @guitar.body_type %> / <%= @guitar.body_wood %></li>
-            <li>neck : <%= @guitar.neck_type %> / <%= @guitar.neck_wood %></li>
-            <li>fret : <%= @guitar.fret %></li>
-            <li>number of fret : <%= @guitar.number_of_fret %></li>
-            <li>finger board : <%= @guitar.fret_wood %></li>
-            <li>scale : <%= @guitar.scale %></li>
-            <li>nut : <%= @guitar.nut %></li>
-            <li>bridge : <%= @guitar.bridge %></li>
-            <li>string space : <%= @guitar.string_space %></li>
-            <li>neck pickup : <%= @guitar.neck_pickup %></li>
-            <li>middle pickup : <%= @guitar.middle_pickup %></li>
-            <li>bridg pickup : <%= @guitar.bridg_pickup %></li>
-            <li>controlls : <%= @guitar.controlls %></li>
-            <li>tuners : <%= @guitar.tuners %></li>
-            <li>hardware_color : <%= @guitar.hardware_color %></li>
-            <li>others : <%= @guitar.others %></li>
-          </ul>
-        </div>
+  <div class="edit_area">
+    <%= link_to(edit_guitar_path)  do %>
+    <div class="edit_button">
+      編集ボタン
+    </div>
+  <% end %>
+  </div>
 
-        <div class="edit_area">
-          <%= link_to(edit_guitar_path)  do %>
-          <div class="edit_button">
-            編集ボタンが入る
-          </div>
-          <% end %>
+  <div class="comment_area">
+    <ul>
+      <li>tuning : <%= @guitar.tuning %></li>
+      <li>string gauge : <%= @guitar.string_gauge %></li>
+      <li>string brand : <%= @guitar.string_brand %></li>
+      <li>string changed at : <%= @guitar.updated_at %></li>
+      <li>comment : <%= @guitar.comment %></li>
+    </ul>
+  </div>
+
+  <div class="string_edit_areacheck">
+    <%= link_to(edit_string_path)  do %>
+    <div class="edit_button">
+      編集ボタン
+    </div>
+    <% end %>
+  </div>
+
+  <div class="button_area">
+    <%= link_to(user_path(current_user), class:"no-underline") do %>
+    <div id="close_button">
+      <p>×</p>
+    </div>
+    <% end %>    
+  </div>
+
+</div>
 
 
-        </div>
-
-<%= link_to 'クローズ', :back, class:"no-underline" %>
-      </div>
 

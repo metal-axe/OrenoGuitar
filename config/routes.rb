@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
   resources :guitars, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :strings, only: [:edit, :update]
+  resources :records, only: [:show, :new, :create, :edit, :update]
 end

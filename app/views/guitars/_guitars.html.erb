@@ -5,7 +5,7 @@
 
     <li>
       <div class="myguitar_container">         
-        <div class="productp">
+        <div class="productp check">
           <%= render 'layouts/product_image', guitar: guitar %>
         </div>
         <div class="spec">
@@ -21,12 +21,12 @@
         <div class="edit_area">
           <%= link_to(edit_guitar_path(guitar), class:"no-underline")  do %>
           <div class="edit_button">
-            編集ボタンが入る
+            編集ボタン
           </div>
           <% end %>
 
           <%= link_to(guitar_path(guitar), class:"no-underline")  do %>
-          <div class="detsils">
+          <div class="deta_button">
             詳細ボタン
           </div>
           <% end %>

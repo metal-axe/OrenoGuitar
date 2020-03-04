@@ -1,6 +1,5 @@
 <%= render 'layouts/header', users: @users %>
 
-
 <div id="container">
   <div id="infomation_area" class="area  rowspan2">
     <h2>information</h2>
@@ -9,64 +8,19 @@
   <div id="center_area" class="area rowspan5">
     <h2>Latest List</h2>
     <div class="outer_container">
-      <!-- ここから中のコンテナ-->
-      <div class="inner_container">
-        <div class="userp">
-          <img src="p/sample.png" class="user_image">
-        </div>
-        <div class="user_prof">
-          <p>お名前名乗太郎</p>
-        </div>            
-        <div class="productp">
-          <img src="p/gsample.png" class="product_image">
-        </div>
-        <div class="spec">
-          <ul>
-            <li>Brand name : Ibanez</li>
-            <li>Model name : RGT220H</li>
-            <li>Tuning : EADGBE</li>
-            <li>String Gauge : 42/32/24/16/11/09</li>
-            <li>Strings change at : 2020.03.01</li>
-            <li>Created at : 2020.03.01</li>
-          </ul>
-        </div>
-        <div class="button_space">
-          gp
-        </div>
-      </div>
-      <!-- ここまで中のコンテナ-->
+        <!-- ここから中のコンテナ-->
+
+
+
+
+
+
+        <!-- ここまで中のコンテナ-->
     </div>
   </div><!-- end of center_area-->
 
-  <!-- ここからログイン状況で変える場所-->
-  <% if logged_in? %>
-    <div id="loginn_area_upside" class="area">
-      <%= link_to 'MY PAGE', user_path(current_user), class:"no-underline" %>
-    </div>
-    <div id="loginarea" class="area">
-      <div class="userp">
-        <%= render 'layouts/user_icon', user: current_user %>
-      </div>
-      <div class="user_prof">
-        <p>ログイン完了ユーザ: <%= current_user.name %></p>
-      </div>
 
-      <%= link_to 'Logout', logout_path, method: :delete %>
-    </div>
-  <% else %>
-    <div id="loginn_area_upside" class="area">
-      <p>Create an account?</p>
-    </div>
-    <div id="loginarea" class="area">
-      <%= link_to(signup_path, class:"no-underline")  do %>
-        <div id="signup_button"><p>Sign up</p></div>
-      <% end %>
-      <%= link_to(login_path, class:"no-underline")  do %>
-        <div id="login_button"><p>Log in</p></div>
-      <% end %>
-    </div>
-  <% end %>
-  <!-- ここまでログイン状況で変える場所-->
+  <%= render 'layouts/login' %>
 
   <div id="update_area" class="area">
     <h2>Update</h2>
@@ -80,10 +34,11 @@
   <div id="lower_right_area" class="area">
     <h2>Model Ranking</h2>
   </div>
-  <div id="copyright" class="area">
-    <p><small>&copy; ORENO GUITAR</small></p>
+  <%= link_to(logout_path, class:"no-underline")  do %>
+  <div id="logout" class="area">
+    <p>LOG OUT</p>
   </div>
+  <% end %>
 </div><!-- end of center-->
 
-<footer>
-</footer>
+<%= render 'layouts/footer' %>

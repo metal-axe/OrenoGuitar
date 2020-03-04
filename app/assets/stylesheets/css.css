@@ -9,7 +9,7 @@ html{
 
 body{
     font-size: 1rem;
-    background-color: #aaa;
+    background-color: #001;
     overflow-wrap:break-word;
 }
 
@@ -17,68 +17,23 @@ ul{
     list-style: none;
 }
 
+a{
+  color: #6ac;
+}
+
 .no-underline{text-decoration:none !important;}
 
+h1{
+  color: #abb;
+  font-size: 2rem;
+}
 h2{
     font-size: 1.2rem;
-    color: #9aa;
+    color: #abb;
     border-bottom: solid 1px #333;
     margin: 0 0 15px;
 }
 
-header{
-    width: 70vw;
-    margin: 0 auto;
-    background-color: rgba(100, 100, 100, 0.8);
-    border-right: solid 1px #333;
-    border-left: solid 1px #333;
-}
-
-#logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 72px;
-    background-color: #fff;
-}
-
-#header_band{
-    display: block;
-    width: 100%;
-    height: 18px;
-    position: relative;
-    top: 0;
-    text-align: center;
-    background-color: rgba(100, 100, 100, 0.5);
-}
-#header_band p{
-    font-size: 1rem;
-    line-height: 18px;
-}
-
-#menubar{
-    display: block;
-    width: 100%;
-    position: relative;
-    bottom: 0px;
-    left: 0;
-    background-color: rgba(100, 100, 100, 0);
-}
-header li{
-    display: inline-block;
-    width: 10%;
-    height: 24px;
-    text-align: center;
-    font-size: 1rem;
-    line-height: 24px;
-}
-header li:last-child{
-    width: 50%;
-}
-header li:hover{
-    color: #f00;
-}
 
 /************************ メインコンテナ ************************/
 
@@ -107,7 +62,7 @@ header li:hover{
 
 .area {
   scroll-snap-align: start;
-  background-color: #055;
+  background-color: #000;
   padding: 10px 15px;
 }
 /************************ 画像の設定 ************************/
@@ -136,8 +91,8 @@ header li:hover{
     width: auto;
     height: auto;
     padding: 10px;
-    border: solid 1px #a22;
-    background-color: #aa7;
+    border: solid 1px #0aa;
+    background-color: #dee;
 }
 .user_container .userp{
     grid-row: span 2;
@@ -154,14 +109,13 @@ header li:hover{
 .user_container .user_profile{
     font-size: 1.2rem;
 }
-.user_container .edit_area{
-}
+
 .user_container .edit_button{
     position: relative;
     top: 0;
     left: 0;
 }
-.user_container .button_space{
+.user_container .button_areea{
     order: 5;
     grid-column: span 2;
 }
@@ -182,25 +136,34 @@ header li:hover{
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    top: 100px;
+    top: 50px;
+    border-radius: 3px;
 }
 #form_area h1{
-    color: 399;
+    color: #399;
     font-size: 3rem;
     margin-bottom: 20px;
 }
 #form_area p{
-    color: 399;
+    color: #399;
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
+
+.ceheck_box{
+  margin: 10px;
+}
+
+.text_area{
+  height: 50px;
+}
 .form_style{
-    padding: 10px;
+    padding: 5px;
     font-size: 1.2rem;
     font-family: Arial, sans-serif;
     color: #333;
     border: solid 1px #ccc;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     width: 80%;
     max-width: 300px;
     border-radius: 3px;
@@ -221,6 +184,25 @@ header li:hover{
 .btn_style:hover{
     background-color: #0cc;
 }
+
+#cancel_button{
+  display: block;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #0aa;
+  border-radius: 3px;
+
+}
+#cancel_button p{
+  text-align: center;
+    color: #dee;
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 26px;
+}
 /************************ マイギターコンテナ ************************/
 .flex_container{
     display: flex;
@@ -235,12 +217,71 @@ header li:hover{
     width: auto;
     height: auto;
     padding: 10px;
-    border: solid 1px #a22;
-    background-color: #aa7;
+    border: solid 1px #0aa;
+    background-color: #dee;
+}
+.spec{
+  grid-row: span 1;
 }
 .myguitar_container .spec{
     font-size: 1.2rem;
 }
+
+/************************ スペックコンテナ ************************/
+#spec_container{
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr 20px;
+  grid-template-rows: 500px auto 20px;
+  gap: 30px;
+  width: 80vw;
+  height: 90vh;
+  padding: 30px;
+  margin: 0 auto;
+  border: solid 1px #0aa;
+  background-color: #dee;
+}
+
+#spec_container .productp{
+  display: block;
+  grid-column: span 2;
+}
+
+#spec_container .spec{
+  font-size: 1.8rem;
+  grid-row: span 2;
+}
+#spec_container .edit_area{
+  grid-row: span 2;
+
+}
+#spec_container .comment_area{
+  font-size: 1.8rem;
+}
+#spec_container .string_edit_area{
+  
+}
+.button_area{
+  grid-column: span 4; 
+}
+#spec_container .productp{
+  text-align: center;
+}
+#spec_container .productp img{
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+
+#spec_container #close_button{
+  position: relative;
+  width: 40px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #007;
+}
+
 /************************ センターコンテナ ************************/
 
 #center_area{
@@ -249,7 +290,6 @@ header li:hover{
 .outer_container{
     display: block;
     margin-bottom: 20px;
-    background-color: #aaa;
 }
 
 .inner_container{
@@ -260,8 +300,8 @@ header li:hover{
     width: auto;
     height: auto;
     padding: 10px;
-    border: solid 1px #a22;
-    background-color: #aa7;
+    border: solid 1px #0aa;
+    background-color: #dee;
 }
 
 .inner_container .userp{
@@ -312,49 +352,181 @@ header li:hover{
     line-height: 30px;
 }
 #signup_button p{
-    color: #344;
+    color: #133;
 }
 #login_button p{
-    color: #9aa;
+    color: #0aa;
 }
 /************************ ログインスペース ************************/
 #loginn_area_upside{
+  text-align: center;
 }
+
+.bg-bl{
+  display: block;
+  background-color: #222;
+}
+.bg-bl:hover{
+  background-color: #333;
+}
+.bg-gr{
+    background-color: #266;
+}
+
+#loginn_area_upside p{
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 30px;
+  color: #fc1;
+}
+
+#loginarea{
+  text-align: center;
+}
+#loginarea h3{
+  font-size: 1.8rem;
+  color: #acc;
+  font-weight: normal;
+}
+
+
+#login-user{
+  color: #acc;
+}
+
 
 #loginarea .userp{
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+/************************ ヘッダー ************************/
+header{
+    width: 70vw;
+    margin: 0 auto;
+    background-color: rgba(100, 100, 100, 0.6);
+    border-right: solid 1px #333;
+    border-left: solid 1px #333;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    background-color: #255;
+}
+
+#header_band{
+    display: block;
+    width: 100%;
+    height: 18px;
+    position: relative;
+    top: 0;
+    text-align: center;
+    background-color: #266;
+}
+#header_band p{
+    font-size: 1rem;
+    line-height: 18px;
 }
 
 
+/************************ ナビバー ************************/
+
+#navbar{
+    display: block;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    background-color: #333;
+}
+#navbar ul{
+  display: block;
+  height: 24px;
+  text-align: center;
+}
+
+#navbar li{
+  display: inline-block;
+  position: relative;
+  width: 49%;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 24px;
+}
+
+
+#navbar li:last-child{
+  width: 49%;
+}
+#navbar p{
+  color: #eb0;
+  font-weight: bolder;
+}
+
+#navbar li:hover{
+    background-color:  #444;
+}
 
 /************************ 編集ボタン ************************/
 
 .edit_button{
-    display: block;
-    width: 20px;
-    height: 20px;
-    /**背景はあとでSVGに差し替える**/
-    background-color: #222;
-    text-indent: -99999px;
-    z-index: 9999px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  /**背景はあとでSVGに差し替える**/
+  background-color: #222;
+  text-indent: -99999px;
+  z-index: 9999px;
+}
+/************************ 詳細ボタン ************************/
+
+.deta_button{
+  display: block;
+  width: 20px;
+  height: 20px;
+  /**背景はあとでSVGに差し替える**/
+  background-color: #266;
+  text-indent: -99999px;
+  z-index: 9999px;
 }
 
-/************************ コピーライト ************************/
 
-#copyright{
-    text-align: center;
-    vertical-align: bottom;
+/************************ ログアウト ************************/
+
+#logout{
+  display: block;
+  text-align: center;
+}
+
+#logout p{
+  display: block;
+  font-size: 0.5rem;
+  font-weight: bold;
+  line-height: 10px;
+  color: #eb0;
 }
 
 /************************ フッター ************************/
 
 footer{
-    width: 70vw;
-    height: 10px;
-    background-color: #344;
-    margin: 0 auto 10px;
+  width: 70vw;
+  height: 20px;
+  margin: 0 auto 10px;
+  border: solid 1px #333;
+  background-color: #000;
+  text-align: center;
 }
+
+footer p{
+  line-height: 20px;
+  color: #788;
+}
+
+/************************************************************/
 
 @media (max-width: 1000px){
 /*** ユーザー ***/
@@ -395,7 +567,7 @@ footer{
     order: 2;
 }
 
-/*** センターフィード ***/
+/*** センターエリア ***/
 .inner_container{
     grid-template-columns: 40px auto 100px;
     grid-template-rows: 40px auto 20px;
@@ -474,5 +646,37 @@ footer{
     order: 3;
 }
 
+#infomation_area{
+  order: 4;
+}
+#center_area{
+  order: 3;
+}
+#loginn_area_upside{
+  order: 1;
+}
+
+#loginarea{
+  order: 2;
+}
+#update_area{
+  order: 5;
+}
+
+#upper_right_area{
+    order: 6;
+}
+#lower_left_area{
+    order: 8;
+}
+#lower_right_area{
+    order: 7;
+}
+#logout{
+    order: 9;
+
+}
+  
+  
 }
 
