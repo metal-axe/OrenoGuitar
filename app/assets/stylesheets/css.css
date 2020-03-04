@@ -176,7 +176,8 @@ header li:hover{
 }
 #form_area{
     width: 30vw;
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     background-color: #dee;
     margin: 0 auto;
     padding: 20px;
@@ -231,7 +232,7 @@ header li:hover{
     gap: 10px;
     grid-template-columns: 100px 1fr 20px;
     grid-template-rows: auto;
-    width: 100%;
+    width: auto;
     height: auto;
     padding: 10px;
     border: solid 1px #a22;

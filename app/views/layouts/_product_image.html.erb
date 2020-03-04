@@ -1,0 +1,5 @@
+<% if guitar.image? %>
+  <%= image_tag guitar.image.thumb.url, class: 'product_image' %>
+<% else %>
+  <%= image_tag "/assets/product_default.png" %>
+<% end %>

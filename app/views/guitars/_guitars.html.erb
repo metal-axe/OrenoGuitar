@@ -1,0 +1,40 @@
+<ul>
+
+
+  <% guitars.each do |guitar| %>
+
+    <li>
+      <div class="myguitar_container">         
+        <div class="productp">
+          <img src="p/gsample.png" class="product_image">
+        </div>
+        <div class="spec">
+          <ul>
+            <li>Brand name : <%= guitar.brand %></li>
+            <li>Model name : <%= guitar.model %></li>
+            <li>Tuning : <%= guitar.tuning %></li>
+            <li>String Gauge : <%= guitar.string_gauge %></li>
+            <li>Strings change at : #</li>
+            <li>Created at : <%= guitar.created_at %></li>
+          </ul>
+        </div>
+        <div class="edit_area">
+          <%= link_to(edit_guitar_path(guitar), class:"no-underline")  do %>
+          <div class="edit_button">
+            編集ボタンが入る
+          </div>
+          <% end %>
+
+          <%= link_to(guitar_path(guitar), class:"no-underline")  do %>
+          <div class="detsils">
+            詳細ボタン
+          </div>
+          <% end %>
+
+        </div>
+      </div>
+
+    </li>
+  <% end %>
+  <%= paginate guitars %>
+</ul>

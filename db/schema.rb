@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_094500) do
+ActiveRecord::Schema.define(version: 2020_03_03_151438) do
+
+  create_table "guitars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category"
+    t.string "brand"
+    t.string "model"
+    t.string "neck_type"
+    t.string "neck_wood"
+    t.string "body_type"
+    t.string "body_wood"
+    t.string "fret"
+    t.string "number_of_fret"
+    t.string "fret_wood"
+    t.string "scale"
+    t.string "nut"
+    t.string "bridge"
+    t.string "string_space"
+    t.string "neck_pickup"
+    t.string "middle_pickup"
+    t.string "bridg_pickup"
+    t.string "controlls"
+    t.string "tuners"
+    t.string "tuning"
+    t.string "string_gauge"
+    t.string "string_brand"
+    t.string "hardware_color"
+    t.string "main_or_sub"
+    t.string "others"
+    t.string "comment"
+    t.string "image"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_guitars_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -23,4 +57,5 @@ ActiveRecord::Schema.define(version: 2020_03_03_094500) do
     t.string "image"
   end
 
+  add_foreign_key "guitars", "users"
 end

@@ -3,11 +3,20 @@ class UsersController < ApplicationController
 
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
-    
+
   end
 
   def show
     @user = User.find(params[:id])
+
+    if logged_in?
+      @guitar = current_user.guitars.build  # form_with 用
+      @guitars = current_user.guitars.order(id: :desc).page(params[:page])
+    end
+      #guitars = @user.guitars
+      #@guitar = Guitar.find(params[:id])
+      #@guitars = Guitar.order(id: :desc).page(params[:page])
+
   end
 
   def new
@@ -19,7 +28,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'User registered'
-      redirect_to @user
+      redirect_to login_path
     else
       flash.now[:danger] = 'Registration of the user failed'
       render :new

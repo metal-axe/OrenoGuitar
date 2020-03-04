@@ -1,0 +1,97 @@
+<p>Brand and Model fields are required.</p>
+<%= form_with(model: guitar, local: true) do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
+  <div>
+    <%= f.radio_button :category, :guitar, checked: true %>
+    <%= f.label :category, "Guitar", {value: :guitar, style: "display: inline-block;"} %>
+    <%= f.radio_button :category, :bass %>
+    <%= f.label :category, "Bass", {value: :bass, style: "display: inline-block;"} %>
+  </div>
+    <div>
+    <%= f.text_field :brand, placeholder: 'brand', class: 'form_style' %>
+  </div>
+    <div>
+    <%= f.text_field :model, placeholder: 'model', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :neck_type, placeholder: 'neck_type', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :neck_wood, placeholder: 'neck_wood', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :body_wood, placeholder: 'body_wood', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :fret, placeholder: 'fret', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :number_of_fret, placeholder: 'number_of_fret', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :fret_wood, placeholder: 'fret_wood', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :scale, placeholder: 'scale', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :nut, placeholder: 'nut', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :bridge, placeholder: 'bridge', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :string_space, placeholder: 'string_space', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :neck_pickup, placeholder: 'neck_pickup', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :middle_pickup, placeholder: 'middle_pickup', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :bridg_pickup, placeholder: 'bridg_pickup', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :controlls, placeholder: 'controlls', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :tuners, placeholder: 'tuners', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :hardware_color, placeholder: 'hardware_color', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_area :others, placeholder: 'others', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.label :main_or_sub, 'Mainly use it?' %>
+    <%= f.check_box :main_or_sub ,{}, 'true', 'false' %>
+  </div>
+
+  <div>
+    <%#= f.text_field :image, placeholder: 'image', class: 'form_style' %>
+  </div>
+
+  <%= f.submit 'REGISTER', class: 'btn_style' %>
+<% end %>
+
+<%= link_to 'CANCEL', user_path(current_user), class:"no-underline btn_style" %>

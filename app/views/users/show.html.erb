@@ -1,3 +1,6 @@
+<h1>Users#show</h1>
+
+
 <div class="outer_container">
   <div class="user_container">
     <div class="userp">
@@ -8,7 +11,11 @@
         <p><%= @user.name %></p>
       </div>
       <div class="user_url">
-        <p><%= link_to @user.url, @user.url, class:"no-underline"%></p>
+        <p>
+          <% if @user.url.present? %>
+          <%= link_to @user.url, @user.url, class:"no-underline"%>
+          <% end %>
+        </p>
       </div>      
       <div class="user_profile">
         <p><%= @user.profile %></p>
@@ -26,3 +33,16 @@
     </div>
   </div>
 </div>
+
+<%= link_to(new_guitar_path, class:"no-underline")  do %>
+<div>
+  ギター登録ボタン
+</div>
+<% end %>
+
+<%= link_to(root_path, class:"no-underline")  do %>
+<div>
+  トップへボタン
+</div>
+<% end %>
+  <%= render 'guitars/guitars', guitars: @guitars %>
