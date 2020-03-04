@@ -31,6 +31,7 @@ class GuitarsController < ApplicationController
     @guitar = Guitar.find(params[:id])
   end
 
+
   def update
     @guitar = Guitar.find(params[:id])
 

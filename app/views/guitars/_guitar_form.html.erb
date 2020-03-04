@@ -1,13 +1,18 @@
 <p>Brand and Model fields are required.</p>
 <%= form_with(model: guitar, local: true) do |f| %>
 <%= render 'layouts/error_messages', model: f.object %>
+
+  <div>
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+  </div>
+
   <div>
     <%= f.radio_button :category, :guitar, checked: true %>
     <%= f.label :category, "Guitar", {value: :guitar, style: "display: inline-block;"} %>
     <%= f.radio_button :category, :bass %>
     <%= f.label :category, "Bass", {value: :bass, style: "display: inline-block;"} %>
   </div>
-    <div>
+  <div>
     <%= f.text_field :brand, placeholder: 'brand', class: 'form_style' %>
   </div>
     <div>
@@ -85,10 +90,6 @@
   <div>
     <%= f.label :main_or_sub, 'Mainly use it?' %>
     <%= f.check_box :main_or_sub ,{}, 'true', 'false' %>
-  </div>
-
-  <div>
-    <%#= f.text_field :image, placeholder: 'image', class: 'form_style' %>
   </div>
 
   <%= f.submit 'REGISTER', class: 'btn_style' %>

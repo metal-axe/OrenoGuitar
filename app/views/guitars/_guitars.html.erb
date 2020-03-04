@@ -6,7 +6,7 @@
     <li>
       <div class="myguitar_container">         
         <div class="productp">
-          <img src="p/gsample.png" class="product_image">
+          <%= render 'layouts/product_image', guitar: guitar %>
         </div>
         <div class="spec">
           <ul>
@@ -28,6 +28,13 @@
           <%= link_to(guitar_path(guitar), class:"no-underline")  do %>
           <div class="detsils">
             詳細ボタン
+          </div>
+          <% end %>
+
+
+          <%= link_to(edit_string_path(guitar))  do %>
+          <div class="edit_button">
+            弦についての編集
           </div>
           <% end %>
 

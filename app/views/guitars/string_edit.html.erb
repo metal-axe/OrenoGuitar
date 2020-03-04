@@ -1,0 +1,25 @@
+
+<p>Brand and Model fields are required.</p>
+<%= form_with(model: @guitar, local: true) do |f| %>
+
+<%= render 'layouts/error_messages', model: f.object %>
+  <div>
+    <%= f.text_field :tuning, placeholder: 'tuning', class: 'form_style' %>
+  </div>
+    <div>
+    <%= f.text_field :string_gauge, placeholder: 'string_gauge', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_field :string_brand, placeholder: 'string_brand', class: 'form_style' %>
+  </div>
+
+  <div>
+    <%= f.text_area :comment, placeholder: 'comment', class: 'form_style' %>
+  </div>
+
+
+  <%= f.submit 'REGISTER', class: 'btn_style' %>
+<% end %>
+
+<%= link_to 'CANCEL', user_path(current_user), class:"no-underline btn_style" %>

@@ -3,7 +3,7 @@
 
       <div class="spec_container">
         <div class="productp">
-          <%#= render 'layouts/product_image', guitar: @guitar %>
+          <%= render 'layouts/product_image', guitar: @guitar %>
         </div>
 
         <div class="spec">
@@ -26,7 +26,6 @@
             <li>tuners : <%= @guitar.tuners %></li>
             <li>hardware_color : <%= @guitar.hardware_color %></li>
             <li>others : <%= @guitar.others %></li>
- 
           </ul>
         </div>
 
@@ -37,7 +36,9 @@
           </div>
           <% end %>
 
+
         </div>
+
 <%= link_to 'クローズ', :back, class:"no-underline" %>
       </div>
 
